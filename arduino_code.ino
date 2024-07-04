@@ -101,7 +101,8 @@ void setup()
  
   pinMode(9,OUTPUT);
   pinMode(10,OUTPUT);
-  pinMode(11,INPUT);
+  pinMode(11,OUTPUT);
+  pinMode(A0,INPUT);
   for(int i=450;i<=700;i++)
   {  
     Value V;
@@ -139,7 +140,7 @@ void loop()
     analogWrite(10,G[c]);
     analogWrite(11,B[c]);
     delay(50);
-    LDR[c]=analogRead(0);
+    LDR[c]=analogRead(A0);
     Res[c]=(500/LDR[c])-100;
     A[c]=-log(Res[c]);
     Serial.print(LDR[c]);
